@@ -156,6 +156,7 @@ export default function App() {
       <nav className="navbar">
         <div className="brand">🧑‍💻 Student Portal</div>
         <div className="links">
+        <div className="links"></div>
           {/*Nav links*/}
         </div>
       </nav>
