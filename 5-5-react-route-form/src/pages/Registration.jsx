@@ -8,6 +8,7 @@ export default function Registration() {
   const handleSubmit = (e) => {
     e.preventDefault();
     {/*Form validations*/}
+    const nextErrors = {}; 
 
     // alert(`Regiteration submit: ${email}`);
   };
