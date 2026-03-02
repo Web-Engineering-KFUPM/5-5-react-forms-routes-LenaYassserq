@@ -9,25 +9,21 @@ export default function Registration() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    {/*Form validations*/}
+    // Form validations
 
     const nextErrors = {};
 
-    // Email validation
     if (!email.trim()) nextErrors.email = "Email is required";
     else if (!(email.includes("@") && email.endsWith(".com")))
       nextErrors.email = "Enter a valid email address";
 
-    // Password validation
     if (!password.trim()) nextErrors.password = "Password is required";
 
-    // Gender validation
     if (!gender) nextErrors.gender = "Please select your gender";
 
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) return;
 
-    // alert(`Regiteration submit: ${email}`);
     alert(`Regiteration submit: ${email}`);
   };
 
@@ -51,22 +47,22 @@ export default function Registration() {
             aria-describedby={errors.email ? "email-error" : undefined}
           />
           {errors.email && (
-            <p id="email-error" className="error">{errors.email}</p>
+            <p id="email-error" className="error">
+              {errors.email}
+            </p>
           )}
         </div>
 
         <div className="form-row">
-           {/*password*/}
-           <label htmlFor="password">Password</label>
-           <input
-             id="password"
-             type="password"
-             value={password}
-             onChange={(e) => setPassword(e.target.value)}
-           />
-           {errors.password && (
-             <p className="error">{errors.password}</p>
-           )}
+          {/*password*/}
+          <label htmlFor="password">Password</label>
+          <input
+            id="password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          {errors.password && <p className="error">{errors.password}</p>}
         </div>
 
         <fieldset className="form-row">
@@ -95,12 +91,10 @@ export default function Registration() {
             Female
           </label>
 
-          {errors.gender && (
-            <p className="error">{errors.gender}</p>
-          )}
+          {errors.gender && <p className="error">{errors.gender}</p>}
         </fieldset>
 
-          {/*Disable the submit button until all requirements met*/}
+        {/*Disable the submit button until all requirements met*/}
         <button
           type="submit"
           className="btn"
